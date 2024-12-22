@@ -1,0 +1,3 @@
+package usecase
+
+// TODO: VALIDATE AND STUDY HOW TO USE THIS
