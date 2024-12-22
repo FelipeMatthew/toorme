@@ -1,0 +1,59 @@
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Air (live reload tool)
+.air.toml
+.air
+
+# Go modules
+/go.mod
+/go.sum
+
+# Dependency directories
+/vendor/
+
+# Build output
+/bin/
+/build/
+/dist/
+/tmp/
+
+# Logs
+*.log
+*.tmp
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+.env
+.env.local
+
+# Node.js (if used for any frontend within the repo)
+node_modules/
+
+# Tests
+*.coverage
+*.test
+/testresults/
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+
+# Git
+!.gitignore

@@ -1,20 +1,14 @@
 package main
 
 import (
-	"net/http"
 	"toorme-api-golang/config"
-
-	"github.com/labstack/echo/v4"
+	"toorme-api-golang/internal/app/server"
 )
 
 func main() {
 	config.LoadEnv()
 
-	e := echo.New()
+	server := server.NewServer()
+	server.Start()
 
-	e.GET("/ping", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, "pong")
-	})
-
-	e.Logger.Fatal(e.Start(":8080"))
 }
