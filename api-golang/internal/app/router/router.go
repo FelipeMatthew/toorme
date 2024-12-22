@@ -1,13 +1,14 @@
 package router
 
 import (
-	"net/http"
+	"toorme-api-golang/internal/app/handler"
 
 	"github.com/labstack/echo/v4"
 )
 
 func SetupRoutes(e *echo.Echo) {
-	e.GET("/ping", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, "pong")
-	})
+	e.GET("/ping", handler.Ping)
+
+	user := e.Group("user")
+	user.GET("/ping", handler.Ping)
 }

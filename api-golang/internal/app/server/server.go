@@ -42,7 +42,7 @@ func NewServer() *Server {
 	server.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
 		Format: `[${time_rfc3339}]  ${status}  ${method}  ${host}${path} ${latency_human}` + "\n",
 	}))
-	server.Use(custom_middleware.TokenAuthMiddleware) // Middleware de autenticação
+	server.Use(custom_middleware.TokenAuthMiddleware)
 	server.Validator = &CustomValidator{validator: validator.New()}
 	router.SetupRoutes(server)
 	return &Server{Echo: server}
