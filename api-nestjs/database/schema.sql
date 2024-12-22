@@ -2,7 +2,7 @@
 CREATE DATABASE toorme;
 
 -- Switch to the TravelPlanner database
-\c toorme;
+USE toorme;
 
 -- Enable pgcrypto extension for password hashing
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
