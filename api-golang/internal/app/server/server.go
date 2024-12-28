@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"strings"
 	"toorme-api-golang/config"
-	custom_middleware "toorme-api-golang/internal/app/middleware"
 	"toorme-api-golang/internal/app/router"
 	"toorme-api-golang/pkg/logger"
 
@@ -42,9 +41,9 @@ func NewServer() *Server {
 	server.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
 		Format: `[${time_rfc3339}]  ${status}  ${method}  ${host}${path} ${latency_human}` + "\n",
 	}))
-	server.Use(custom_middleware.TokenAuthMiddleware)
 	server.Validator = &CustomValidator{validator: validator.New()}
-	router.SetupRoutes(server)
+	r := router.NewRouter(server)
+	r.SetupRoutes()
 	return &Server{Echo: server}
 }
 

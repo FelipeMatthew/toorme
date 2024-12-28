@@ -8,6 +8,6 @@ type ConfigStruct struct {
 	DB_HOST              string
 	DB_PORT              string
 	DB_NAME              string
-	AUTH_TOKEN           string
+	JWT_TOKEN            string
 	CORS_ALLOWED_ORIGINS string
 }

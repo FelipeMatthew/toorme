@@ -24,7 +24,7 @@ func LoadEnv() {
 		DB_HOST:              os.Getenv("DB_HOST"),
 		DB_PORT:              os.Getenv("DB_PORT"),
 		DB_NAME:              os.Getenv("DB_NAME"),
-		AUTH_TOKEN:           os.Getenv("AUTH_TOKEN"),
+		JWT_TOKEN:            os.Getenv("JWT_TOKEN"),
 		CORS_ALLOWED_ORIGINS: os.Getenv("CORS_ALLOWED_ORIGINS"),
 	}
 }
