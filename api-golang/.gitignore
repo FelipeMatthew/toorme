@@ -9,6 +9,7 @@
 # Air (live reload tool)
 .air.toml
 .air
+.env
 
 # Go modules
 /go.mod

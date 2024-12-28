@@ -10,7 +10,6 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-// TODO: trasnform to enviroment variable
 var SecretKey = []byte(config.Config.JWT_TOKEN)
 
 func JWTMiddleware(next echo.HandlerFunc) echo.HandlerFunc {

@@ -22,29 +22,23 @@ type userLogin struct {
 func Login(c echo.Context) error {
 	var login userLogin
 	if err := c.Bind(&login); err != nil {
-		return c.JSON(http.StatusBadRequest, utils.ErrorResponse("invalid datas"))
+		return c.JSON(http.StatusBadRequest, utils.ErrorResponse("invalid data"))
 	}
 
 	var user models.User
-	// Validating user
 	result := config.DB.Where("username = ?", login.Username).First(&user)
 	if result.Error != nil {
-		return c.JSON(http.StatusUnauthorized, utils.ErrorResponse("invalid user"))
+		if result.Error.Error() == "record not found" {
+			return c.JSON(http.StatusUnauthorized, utils.ErrorResponse("invalid username"))
+		}
+		return c.JSON(http.StatusInternalServerError, utils.ErrorResponse("internal error"))
 	}
 
-	// validating pass
-	query := `SELECT password FROM users WHERE username = ?`
-	var storedPassword string
-	if err := config.DB.Raw(query, login.Username).Scan(&storedPassword).Error; err != nil {
-		return c.JSON(http.StatusUnauthorized, utils.ErrorResponse("invalid user"))
-	}
-
-	err := bcrypt.CompareHashAndPassword([]byte(storedPassword), []byte(login.Password))
+	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(login.Password))
 	if err != nil {
 		return c.JSON(http.StatusUnauthorized, utils.ErrorResponse("invalid password"))
 	}
 
-	// jwt token w role
 	claims := jwt.MapClaims{
 		"username": user.Username,
 		"role":     user.Role,
@@ -53,7 +47,11 @@ func Login(c echo.Context) error {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	signedToken, err := token.SignedString(SecretKey)
 	if err != nil {
-		return c.JSON(http.StatusInternalServerError, utils.ErrorResponse("error to generate jwt token"))
+		return c.JSON(http.StatusInternalServerError, utils.ErrorResponse("error generating JWT token"))
 	}
-	return c.JSON(http.StatusOK, map[string]string{"token": signedToken, "role": user.Role})
+
+	return c.JSON(http.StatusOK, map[string]string{
+		"token": signedToken,
+		"role":  user.Role,
+	})
 }
