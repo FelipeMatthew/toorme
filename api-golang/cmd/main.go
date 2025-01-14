@@ -2,7 +2,7 @@ package main
 
 import (
 	"toorme-api-golang/config"
-	"toorme-api-golang/internal/app/server"
+	"toorme-api-golang/internal/server"
 )
 
 func main() {

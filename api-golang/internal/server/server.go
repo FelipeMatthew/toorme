@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 	"toorme-api-golang/config"
-	"toorme-api-golang/internal/app/router"
+	"toorme-api-golang/internal/router"
 	"toorme-api-golang/pkg/logger"
 
 	"github.com/go-playground/validator"

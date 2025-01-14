@@ -1,14 +1,15 @@
 package router
 
 import (
-	"toorme-api-golang/internal/app/handler"
-	"toorme-api-golang/internal/app/middleware"
+	"toorme-api-golang/internal/handler"
+	"toorme-api-golang/internal/middleware"
 
 	"github.com/labstack/echo/v4"
 )
 
 type Router struct {
-	e *echo.Echo
+	e           *echo.Echo
+	userHandler *handler.AuthHandler
 }
 
 func NewRouter(e *echo.Echo) *Router {
@@ -17,7 +18,7 @@ func NewRouter(e *echo.Echo) *Router {
 
 func (r *Router) SetupRoutes() {
 	r.e.GET("/ping", handler.Ping)
-	r.e.POST("/login", handler.Login)
+	r.e.POST("/login", r.userHandler.Login)
 
 	r.setupAdminRoutes()
 	r.setupDriverRoutes()
