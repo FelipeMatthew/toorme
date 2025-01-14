@@ -10,8 +10,6 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-var SecretKey = []byte(config.Config.JWT_TOKEN)
-
 func JWTMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(c echo.Context) error {
 		authHeader := c.Request().Header.Get("Authorization")
@@ -24,7 +22,7 @@ func JWTMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 				return nil, echo.NewHTTPError(http.StatusUnauthorized, "unexpected signing method")
 			}
-			return SecretKey, nil
+			return []byte(config.Config.JWT_TOKEN), nil
 		})
 
 		if err != nil || !token.Valid {

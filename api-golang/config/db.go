@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"log/slog"
-	"toorme-api-golang/internal/domain/models"
+	"toorme-api-golang/internal/models"
 	"toorme-api-golang/pkg/logger"
 
 	"gorm.io/driver/postgres"

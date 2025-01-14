@@ -3,7 +3,7 @@ package config
 import (
 	"log/slog"
 	"os"
-	"toorme-api-golang/internal/domain/models"
+	"toorme-api-golang/internal/models"
 	"toorme-api-golang/pkg/logger"
 
 	"github.com/joho/godotenv"

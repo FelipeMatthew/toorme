@@ -6,14 +6,15 @@ POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-  "username": "driver1",
-  "password": "driverpass789"
+  "username": "admin1",
+  "password": "securepassword123"
 }
 
 # {
-#   "username": "admin1",
-#   "password": "securepassword123"
+#   "username": "driver1",
+#   "password": "driverpass789"
 # }
+
 
 # {
 #   "username": "customer1",
@@ -21,12 +22,41 @@ Content-Type: application/json
 # }
 
 
+### USERS
+GET http://localhost:8080/user
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY5ODA2NDksInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.DBP5T7LVqSB6-xZ0osOugm9KitdjJ0LAUydZyiN3luA
+
+###
+GET http://localhost:8080/user/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY5ODA2NDksInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.DBP5T7LVqSB6-xZ0osOugm9KitdjJ0LAUydZyiN3luA
+
+###
+POST  http://localhost:8080/user
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY5ODA2NDksInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.DBP5T7LVqSB6-xZ0osOugm9KitdjJ0LAUydZyiN3luA
+
+{
+  "username": "admin12",
+  "password": "securepassword123",
+  "full_name": "Administrator One",
+  "email": "admin1@example.com",
+  "phone_number": "+5511987654321",
+  "role": "admin"
+}
+
+
+###
+GET http://localhost:8080/user/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY5ODA2NDksInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.DBP5T7LVqSB6-xZ0osOugm9KitdjJ0LAUydZyiN3luA
 
 ###
 # ADMIN
 GET http://localhost:8080/admin/dashboard
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzU1MTI1MTksInJvbGUiOiJkcml2ZXIiLCJ1c2VybmFtZSI6ImRyaXZlcjEifQ.bdZnlc3NSL-PdxW6taTI7RHdUJuR9coSBrncCmCRrgk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY5ODA2NDksInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.DBP5T7LVqSB6-xZ0osOugm9KitdjJ0LAUydZyiN3luA
 
 
 ###
