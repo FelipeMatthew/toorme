@@ -19,13 +19,13 @@ func (r *Router) SetupRoutes() {
 	r.e.GET("/ping", handler.Ping)
 	r.e.POST("/login", handler.Login)
 
-	r.setupUserRoutes()
-	r.setupAdminRoutes()
-	r.setupDriverRoutes()
-	r.setupCustomerRoutes()
+	r.UserRoutes()
+	r.AdminRoutes()
+	r.DriverRoutes()
+	r.CustomerRoutes()
 }
 
-func (r *Router) setupUserRoutes() {
+func (r *Router) UserRoutes() {
 	user := r.e.Group("/user", middleware.JWTMiddleware)
 	user.Use(middleware.RoleMiddleware("admin"))
 
@@ -36,7 +36,7 @@ func (r *Router) setupUserRoutes() {
 	user.DELETE("/:id", handler.DeleteUser)
 }
 
-func (r *Router) setupAdminRoutes() {
+func (r *Router) AdminRoutes() {
 	adminGroup := r.e.Group("/admin", middleware.JWTMiddleware)
 	adminGroup.Use(middleware.RoleMiddleware("admin"))
 
@@ -44,7 +44,7 @@ func (r *Router) setupAdminRoutes() {
 
 }
 
-func (r *Router) setupDriverRoutes() {
+func (r *Router) DriverRoutes() {
 	driverGroup := r.e.Group("/driver", middleware.JWTMiddleware)
 	driverGroup.Use(middleware.RoleMiddleware("driver", "admin"))
 
@@ -52,7 +52,7 @@ func (r *Router) setupDriverRoutes() {
 
 }
 
-func (r *Router) setupCustomerRoutes() {
+func (r *Router) CustomerRoutes() {
 	customerGroup := r.e.Group("/customer", middleware.JWTMiddleware)
 	customerGroup.Use(middleware.RoleMiddleware("customer", "admin"))
 

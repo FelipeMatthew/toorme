@@ -21,14 +21,14 @@ Content-Type: application/json
 #   "password": "mypassword456"
 # }
 
-
+##################################################################################
 ### USERS
 GET http://localhost:8080/user
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc1MDQzMDgsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.YpIKAlM6wcXbZkAwAgvDJ0NRJga348DasDqSIqMfzzU
 
 ###
-GET http://localhost:8080/user/3
+GET http://localhost:8080/user/11
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc1MDQzMDgsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.YpIKAlM6wcXbZkAwAgvDJ0NRJga348DasDqSIqMfzzU
 
@@ -38,26 +38,35 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc1MDQzMDgsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.YpIKAlM6wcXbZkAwAgvDJ0NRJga348DasDqSIqMfzzU
 
 {
-  "username": "admin12",
-  "password": "securepassword123",
-  "full_name": "Administrator One",
-  "email": "admin1@example.com",
+  
+  "username": "admin12aaaa",
+  "password": "securepassword123a",
+  "full_name": "Administrators One",
+  "email": "admian1@exampleaaaaa.com",
   "phone_number": "+5511987654321",
-  "role": "admin"
+  "role": "driver"
+}
+###
+PUT  http://localhost:8080/user/12
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc1MDQzMDgsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.YpIKAlM6wcXbZkAwAgvDJ0NRJga348DasDqSIqMfzzU
+
+{
+  
+  "username": "admin12aaaaaaa",
+  "password": "12a3",
+  "full_name": "Adminaaaistrators One",
+  "email": "admian1@exampleaaaaa.com",
+  "phone_number": "+5511987654321",
+  "role": "driver"
 }
 
-
 ###
-GET http://localhost:8080/user/3
+DELETE  http://localhost:8080/user/11
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc1MDQzMDgsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.YpIKAlM6wcXbZkAwAgvDJ0NRJga348DasDqSIqMfzzU
 
-###
-# ADMIN
-GET http://localhost:8080/admin/dashboard
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc1MDQzMDgsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.YpIKAlM6wcXbZkAwAgvDJ0NRJga348DasDqSIqMfzzU
-
+#############################################################################################
 
 ###
 # DRIVER
