@@ -40,7 +40,8 @@ func (r *Router) setupAdminRoutes() {
 	adminGroup := r.e.Group("/admin", middleware.JWTMiddleware)
 	adminGroup.Use(middleware.RoleMiddleware("admin"))
 
-	adminGroup.GET("/dashboard", handler.AdminDashboard)
+	adminGroup.GET("/alldata", handler.FetchAllData)
+
 }
 
 func (r *Router) setupDriverRoutes() {

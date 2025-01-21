@@ -25,17 +25,17 @@ Content-Type: application/json
 ### USERS
 GET http://localhost:8080/user
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY5ODA2NDksInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.DBP5T7LVqSB6-xZ0osOugm9KitdjJ0LAUydZyiN3luA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc1MDQzMDgsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.YpIKAlM6wcXbZkAwAgvDJ0NRJga348DasDqSIqMfzzU
 
 ###
 GET http://localhost:8080/user/3
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY5ODA2NDksInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.DBP5T7LVqSB6-xZ0osOugm9KitdjJ0LAUydZyiN3luA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc1MDQzMDgsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.YpIKAlM6wcXbZkAwAgvDJ0NRJga348DasDqSIqMfzzU
 
 ###
 POST  http://localhost:8080/user
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY5ODA2NDksInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.DBP5T7LVqSB6-xZ0osOugm9KitdjJ0LAUydZyiN3luA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc1MDQzMDgsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.YpIKAlM6wcXbZkAwAgvDJ0NRJga348DasDqSIqMfzzU
 
 {
   "username": "admin12",
@@ -50,13 +50,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY5ODA2N
 ###
 GET http://localhost:8080/user/3
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY5ODA2NDksInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.DBP5T7LVqSB6-xZ0osOugm9KitdjJ0LAUydZyiN3luA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc1MDQzMDgsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.YpIKAlM6wcXbZkAwAgvDJ0NRJga348DasDqSIqMfzzU
 
 ###
 # ADMIN
 GET http://localhost:8080/admin/dashboard
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzY5ODA2NDksInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.DBP5T7LVqSB6-xZ0osOugm9KitdjJ0LAUydZyiN3luA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc1MDQzMDgsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.YpIKAlM6wcXbZkAwAgvDJ0NRJga348DasDqSIqMfzzU
 
 
 ###
@@ -69,3 +69,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzU1MTI1M
 GET http://localhost:8080/customer/plans
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzU1MTI1MTksInJvbGUiOiJkcml2ZXIiLCJ1c2VybmFtZSI6ImRyaXZlcjEifQ.bdZnlc3NSL-PdxW6taTI7RHdUJuR9coSBrncCmCRrgk
+
+
+###
+# GET ALL DATAS
+GET http://localhost:8080/admin/alldata
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc1MDQ0MjcsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoiYWRtaW4xIn0.5_UnTIoWWny4GMoNMFwqdy0_lFi5J1ivdEiPADQ5EZw
